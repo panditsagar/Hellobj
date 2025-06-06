@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,27 +15,19 @@ const Footer = () => {
               Delivering innovative digital solutions to help businesses grow and thrive in the modern world.
             </p>
             <div className="flex space-x-4">
-              {[
-                { href: "#", label: "Facebook" },
-                { href: "#", label: "Twitter" },
-                { href: "#", label: "Instagram" },
-                { href: "#", label: "GitHub" },
-              ].map(({ href, label }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  aria-label={label}
-                  className="hover:text-white transition transform hover:scale-110"
-                >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                  </svg>
-                </a>
-              ))}
+              <a href="#" className="text-blue-500 hover:text-white transition">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="text-blue-500 hover:text-white transition">
+                <FaInstagram />
+              </a>
+              <a href="#" className="text-blue-500 hover:text-white transition">
+                <FaXTwitter />
+              </a>
+              <a href="#" className="text-blue-500 hover:text-white transition">
+                <FaLinkedinIn />
+              </a>
+              
             </div>
           </div>
 

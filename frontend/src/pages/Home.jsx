@@ -2,189 +2,274 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Smartphone, Paintbrush, Headphones } from 'lucide-react';
 
+import Stats from '../components/Stats';
+import {
+    Zap, Users, TrendingUp, ShieldCheck, Handshake,
+    Settings2,
+} from 'lucide-react';
+
 const Home = () => {
+    const icons = [Zap, Users, TrendingUp, ShieldCheck, Handshake, Globe, ShieldCheck,
+        Settings2,];
     return (
-        <div className="font-sans text-gray-900 selection:bg-blue-600 selection:text-white">
-            {/* Hero Section */}
-            <section className="bg-[#E0EDFF] text-gray-900 py-28 px-6 text-center">
-                <div className="max-w-3xl mx-auto">
-                    <h1 className="text-4xl md:text-5xl font-extrabold leading-snug mb-6 border-b-4 border-blue-600 inline-block pb-2">
+        <div className="font-inter text-gray-800 bg-[#FAFAFA]">
+
+            {/* 🚀 Hero Section */}
+            <section className="relative bg-gradient-to-br from-blue-50 via-white to-blue-100 py-28 px-6 text-center overflow-hidden">
+                <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-blue-100 rounded-full opacity-30 blur-3xl animate-pulse" />
+                <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-blue-200 rounded-full opacity-20 blur-2xl animate-pulse" />
+
+                <div className="relative z-10 max-w-5xl mx-auto">
+                    <h1 className="text-5xl md:text-6xl font-bold italic text-blue-900 mb-6 leading-tight">
                         We Build Smart Digital Solutions
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl mx-auto">
-                        HelloBj helps startups and businesses grow with top-notch tech solutions tailored for success.
+                    <p className="text-2xl text-gray-700 mb-10 max-w-2xl mx-auto">
+                        Helping businesses thrive with technology, design & strategy.
                     </p>
-                    <Link
-                        to="/contact"
-                        className="inline-block bg-blue-600 text-white px-10 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition duration-300 shadow-md hover:shadow-lg"
-                    >
-                        Let&apos;s Talk
-                    </Link>
+                    <div className="flex justify-center gap-4 flex-wrap">
+                        <Link
+                            to="/contact"
+                            className="bg-blue-900 text-white px-8 py-3 rounded-full font-medium "
+                        >
+                            Let&apos;s Talk
+                        </Link>
+
+                    </div>
                 </div>
             </section>
 
-
-            {/* About Section */}
-            <section className="container mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
-                <div className="text-center md:text-left ml-28">
+            {/* 🧠 About Section */}
+            <section className="py-20 px-6">
+                <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center bg-white rounded-2xl shadow-md p-10">
                     <img
                         src="/logo.svg"
                         alt="About HelloBj"
-                        className="w-64 h-64 mx-auto md:mx-0 rounded-xl  transform hover:scale-105 transition-transform duration-500 ease-in-out"
+                        className="w-64 h-64 object-contain mx-auto"
                     />
-                </div>
-                <div>
-                    <h2 className="text-4xl font-extrabold mb-6 text-blue-900">About HelloBj</h2>
-                    <p className="text-lg leading-relaxed mb-6 text-gray-700">
-                        HelloBj is a forward-thinking technology company delivering innovative and scalable software solutions.
-                        We partner with startups and enterprises to deliver user-centered, data-driven products.
-                    </p>
-                    <p className="text-lg leading-relaxed text-gray-700">
-                        Our mission is to empower organizations through robust code, engaging design, and reliable support.
-                        We transform ideas into functional, stunning digital products.
-                    </p>
-                </div>
-            </section>
-
-            {/* Services Section */}
-            <section className="bg-gray-50 py-24">
-                <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-4xl font-extrabold mb-14 text-blue-900">Our Services</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                        {[
-                            {
-                                icon: <Globe className="w-12 h-12 text-blue-600 mx-auto mb-5" />,
-                                title: 'Web Development',
-                                text: 'Modern, secure, and scalable websites with performance in mind.',
-                            },
-                            {
-                                icon: <Smartphone className="w-12 h-12 text-blue-600 mx-auto mb-5" />,
-                                title: 'Mobile Development',
-                                text: 'Native and cross-platform mobile apps for seamless user experience.',
-                            },
-                            {
-                                icon: <Paintbrush className="w-12 h-12 text-blue-600 mx-auto mb-5" />,
-                                title: 'UI/UX Design',
-                                text: 'Human-centered, intuitive designs and smooth interactions.',
-                            },
-                            {
-                                icon: <Headphones className="w-12 h-12 text-blue-600 mx-auto mb-5" />,
-                                title: 'Support & Maintenance',
-                                text: 'Ongoing support, updates, and iterative improvements.',
-                            },
-                        ].map((service, index) => (
-                            <div
-                                key={index}
-                                className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                            >
-                                {service.icon}
-                                <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
-                                <p className="text-gray-600 text-base">{service.text}</p>
-                            </div>
-                        ))}
+                    <div>
+                        <h2 className="text-3xl font-bold text-blue-900 mb-4">About Hellobj</h2>
+                        <p className="text-gray-700 mb-4">
+                            HelloBj is a forward-thinking technology company delivering innovative and scalable software solutions.
+                        </p>
+                        <p className="text-gray-700">
+                            We empower organizations through robust code, engaging design, and reliable support.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            {/* Why Choose Us */}
-            <section className="py-24 px-6 text-center bg-gradient-to-tr from-blue-50 to-blue-100">
-                <h2 className="text-4xl font-extrabold mb-14 text-blue-900">Why Choose HelloBj?</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 max-w-6xl mx-auto">
-                    {[
-                        { icon: '⚡', title: 'Fast Delivery' },
-                        { icon: '👩‍💻', title: 'Expert Team' },
-                        { icon: '📈', title: 'Growth-Oriented' },
-                        { icon: '🔒', title: 'Secure Solutions' },
-                    ].map((item, index) => (
-                        <div
-                            key={index}
-                            className="bg-white p-10 rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300"
-                        >
-                            <div className="text-5xl mb-6">{item.icon}</div>
-                            <h3 className="text-xl font-semibold text-blue-900">{item.title}</h3>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Technologies */}
+            {/* 🛠 Services Section */}
             <section className="bg-white py-24 px-6 text-center">
-                <h2 className="text-4xl font-extrabold mb-12 text-gray-800">Technologies We Use</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                    {[
-                        'React',
-                        'Next.js',
-                        'Tailwind CSS',
-                        'Node.js',
-                        'MongoDB',
-                        'Firebase',
-                        'Figma',
-                        'Express.js',
-                    ].map((tech, index) => (
-                        <div
-                            key={index}
-                            className="bg-gray-100 hover:bg-blue-200 text-gray-800 hover:text-blue-700 px-8 py-4 rounded-full text-sm font-semibold shadow-md cursor-default transition-colors duration-300"
-                        >
-                            {tech}
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* Stats Section */}
-            <section className="bg-blue-50 py-20">
-                <div className="max-w-5xl mx-auto px-6">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-center text-blue-800 mb-14">
-                        Our Impact
-                    </h2>
-                    <div className="bg-blue-100 rounded-3xl p-14 text-center grid grid-cols-2 sm:grid-cols-4 gap-10 shadow-inner">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-5xl font-semibold text-[#1C398E] mb-16">Hellobj Services</h2>
+                    <div className="grid md:grid-cols-3 gap-10">
                         {[
-                            { label: 'Projects Delivered', value: '120+' },
-                            { label: 'Satisfied Clients', value: '90+' },
-                            { label: 'Tech Experts', value: '20+' },
-                            { label: 'Years of Experience', value: '4+' },
-                        ].map((stat, index) => (
-                            <div key={index}>
-                                <p className="text-4xl font-extrabold text-blue-900">{stat.value}</p>
-                                <p className="text-blue-800 mt-2 tracking-wide">{stat.label}</p>
+                            { icon: <Globe size={48} />, title: 'Web Development', desc: 'Modern, secure, and scalable websites.' },
+                            { icon: <Smartphone size={48} />, title: 'Mobile Development', desc: 'Native and cross-platform apps for Android & iOS.' },
+                            { icon: <Paintbrush size={48} />, title: 'UI/UX Design', desc: 'Designs that balance beauty and usability.' },
+                            { icon: <Headphones size={48} />, title: 'Support & Maintenance', desc: 'Reliable post-launch assistance & updates.' },
+                            { icon: <Smartphone size={48} />, title: 'Consulting', desc: 'Strategic tech advice for digital growth.' },
+                            {
+                                icon: <Settings2 size={48} className="text-[#1C398E] mb-4" />,
+                                title: 'Maintenance & Monitoring',
+                                desc: 'Proactive system monitoring and timely maintenance to ensure peak performance.',
+                            },
+                            {
+                                icon: <ShieldCheck size={48} className="text-[#1C398E] mb-4" />,
+                                title: 'IT Consulting',
+                                desc: 'Expert guidance to align your technology strategy with business goals.',
+                            },
+                            { icon: <Globe size={48} />, title: 'Cloud Services', desc: 'Deploy and scale using modern cloud platforms.' },
+                            { icon: <Handshake size={48} />, title: 'Partnerships', desc: 'Collaborative solutions for mutual growth.' },
+                        ].map(({ icon, title, desc }, i) => (
+                            <div
+                                key={i}
+                                className="bg-gray-50 p-8 min-h-[320px]  border border-gray-100  hover:shadow-md transition flex flex-col items-center justify-center"
+                            >
+                                <div className="text-[#1C398E] mb-4">{icon}</div>
+                                <h3 className="font-semibold text-2xl text-blue-900 mb-3">{title}</h3>
+                                <p className="text-gray-800 text-lg">{desc}</p>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials */}
-            <section className="bg-gray-50 py-24 text-center px-6">
-                <h2 className="text-4xl font-extrabold mb-16 text-gray-900">What Our Clients Say</h2>
-                <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                    {[...Array(4)].map((_, i) => (
+            {/* 💡 Why Choose Us */}
+            <section className="py-24 px-6">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2 className="text-5xl font-semibold text-[#1C398E] mb-16">Why Choose Hellobj?</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                        {[
+                            { title: 'Fast Delivery', desc: 'Speedy project completion without compromise' },
+                            { title: 'Expert Team', desc: 'Highly skilled and dedicated professionals' },
+                            { title: 'Growth-Oriented', desc: 'Focused on scaling your business' },
+                            { title: 'Secure Solutions', desc: 'Top-tier data protection and security' },
+                            { title: 'Transparent Process', desc: 'Clear and honest communication' },
+                            { title: 'Global Reach', desc: 'Serving clients worldwide effectively' },
+                        ].map((item, i) => {
+                            const Icon = icons[i];
+                            return (
+                                <div
+                                    key={i}
+                                    className="bg-white p-14 min-h-[320px] flex border border-gray-100 flex-col items-center"
+                                >
+                                    <Icon size={48} className="text-[#1C398E] mb-6" />
+                                    <h3 className="font-semibold text-2xl text-blue-900 mb-3">{item.title}</h3>
+                                    <p className="text-gray-800 text-lg max-w-xs">{item.desc}</p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+
+
+            {/* 📊 Stats */}
+            <Stats />
+
+            {/* 💬 Testimonials */}
+            <section className="bg-white py-24 px-6 text-center">
+                <h2 className="text-5xl font-semibold text-[#1C398E] mb-14">What Our Clients Say</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+                    {[
+                        {
+                            name: 'Alice Johnson',
+                            company: 'TechCorp Inc.',
+                            avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+                            feedback: 'HelloBj transformed our digital presence with a beautifully designed website that truly reflects our brand.'
+                        },
+                        {
+                            name: 'Mark Stevenson',
+                            company: 'InnovateX',
+                            avatar: 'https://randomuser.me/api/portraits/men/46.jpg',
+                            feedback: 'Their team delivered fast, professional results and the ongoing support has been exceptional.'
+                        },
+                        {
+                            name: 'Sophia Lee',
+                            company: 'BrightFuture Ltd.',
+                            avatar: 'https://randomuser.me/api/portraits/women/68.jpg',
+                            feedback: 'We were impressed by their expert knowledge and ability to bring our ideas to life seamlessly.'
+                        },
+                        {
+                            name: 'James Patel',
+                            company: '',
+                            avatar: 'https://randomuser.me/api/portraits/men/50.jpg',
+                            feedback: 'The project was handled with utmost professionalism and delivered ahead of schedule.'
+                        },
+                        {
+                            name: 'Emily Verma',
+                            company: 'NextGen Apps',
+                            avatar: 'https://randomuser.me/api/portraits/women/12.jpg',
+                            feedback: 'Working with HelloBj was a smooth and creative experience — they truly understood our vision.'
+                        },
+                        {
+                            name: 'Rahul Mehta',
+                            company: 'GlobalEdge Solutions',
+                            avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
+                            feedback: 'Their commitment to quality and attention to detail is unmatched. Highly recommend HelloBj!'
+                        },
+                    ].map(({ name, company, avatar, feedback }, i) => (
                         <div
                             key={i}
-                            className="bg-white p-8 rounded-3xl shadow-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300"
+                            className="bg-gray-50 p-6  border border-gray-100 shadow hover:shadow-md transition flex flex-col items-center"
                         >
-                            <p className="italic text-gray-700 mb-6 leading-relaxed text-lg">
-                                "HelloBj delivered beyond expectations with a top-tier team, clear communication, and brilliant design."
-                            </p>
-                            <p className="font-semibold text-gray-900">— Client {i + 1}, Role</p>
+                            <img
+                                src={avatar}
+                                alt={`${name} avatar`}
+                                className="w-20 h-20 rounded-full mb-4 object-cover shadow-sm"
+                            />
+                            <p className="italic text-gray-700 mb-6">"{feedback}"</p>
+                            <p className="font-semibold text-gray-900">{name}</p>
+                            {company && <p className="text-sm text-gray-500">{company}</p>}
                         </div>
                     ))}
                 </div>
             </section>
 
-            {/* Call To Action */}
-            <section className="bg-[#DBEAFE] py-24 text-black text-center px-6 relative overflow-hidden">
-                <h2 className="text-4xl font-extrabold mb-6 drop-shadow-lg text-[#1447E6]">Let&apos;s Build Your Next Big Idea</h2>
-                <p className="text-lg mb-10 max-w-xl mx-auto drop-shadow-md">
-                    Get in touch with our experts to bring your vision to life.
-                </p>
-                <Link
-                    to="/contact"
-                    className="inline-block bg-blue-700 text-white font-semibold px-12 py-4 rounded-full hover:bg-gray-100 shadow-lg transition duration-300"
-                >
-                    Contact Us
-                </Link>
-                {/* Background glow */}
-             </section>
+
+            {/* 📩 CTA */}
+            <section className="bg-[#FAFAFA] py-24 px-6 font-inter">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="grid md:grid-cols-2 gap-16">
+
+                        {/* Left Section – Contact Info */}
+                        <div className="flex flex-col justify-center">
+                            <h1 className="text-5xl font-semibold text-[#1C398E] mb-6 leading-tight">
+                                Let's Build Your Next Big Idea!
+                            </h1>
+                            <div className="text-gray-700 text-lg space-y-1 ">
+                                Ready to transform your business? We're here to help. Contact us today to explore how our SAP solutions, custom app development, and Opland ERP can elevate your operations. Let's discuss your goals and craft the perfect solutions for your success. Reach out now!
+                            </div>
+
+                        </div>
+
+                        {/* Right Section – Contact Form */}
+                        <form
+                            action="https://formspree.io/f/yourFormID"
+                            method="POST"
+                            className="space-y-6 bg-white p-16  border border-gray-100"
+
+                        >
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your name*"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300   focus:outline-none "
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="Your email*"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300  focus:outline-none "
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <input
+                                    type="text"
+                                    id="subject"
+                                    name="subject"
+                                    placeholder="Subject*"
+                                    required
+                                    className="w-full px-4 py-3 border border-gray-300 focus:outline-none "
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message (optional)</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="Your message"
+                                    rows="4"
+                                    className="w-full px-4 py-3 border border-gray-300  focus:outline-none resize-none"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="bg-[#1C398E] text-white font-semibold py-3 px-6 transition duration-200"
+                            >
+                                SUBMIT
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
         </div>
     );
 };
