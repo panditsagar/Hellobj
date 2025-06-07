@@ -1,43 +1,45 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+    <footer className="bg-black text-gray-300 pt-16 pb-8 border-t border-gray-700">
+      <div className="container mx-auto px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 font-inter">
           {/* Company Info */}
           <div>
-            <h2 className="text-white text-2xl font-bold mb-4">HelloBj</h2>
-            <p className="text-sm leading-relaxed mb-4">
+            <h2 className="text-[#582BF3] text-3xl font-bold mb-6 ">Hellobj</h2>
+            <p className="text-gray-400 leading-relaxed mb-6">
               Delivering innovative digital solutions to help businesses grow and thrive in the modern world.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-blue-500 hover:text-white transition">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="text-blue-500 hover:text-white transition">
-                <FaInstagram />
-              </a>
-              <a href="#" className="text-blue-500 hover:text-white transition">
-                <FaXTwitter />
-              </a>
-              <a href="#" className="text-blue-500 hover:text-white transition">
-                <FaLinkedinIn />
-              </a>
-              
+            <div className="flex space-x-6 text-[#582BF3]">
+              {[FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_6px_rgba(88,43,243,0.7)]"
+                  aria-label="social icon"
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-[#582BF3] text-xl font-semibold mb-6 ">Quick Links</h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
               {["Home", "About Us", "Services", "Portfolio", "Contact"].map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-white transition">
+                  <a
+                    href="#"
+                    className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_5px_rgba(88,43,243,0.7)]"
+                  >
                     {link}
                   </a>
                 </li>
@@ -47,11 +49,14 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-[#582BF3] text-xl font-semibold mb-6">Services</h3>
+            <ul className="space-y-3 text-gray-400 text-sm">
               {["Web Development", "Mobile Apps", "UI/UX Design", "Digital Marketing", "SEO Services"].map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-white transition">
+                  <a
+                    href="#"
+                    className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_5px_rgba(88,43,243,0.7)]"
+                  >
                     {service}
                   </a>
                 </li>
@@ -61,18 +66,18 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="w-5 h-5 text-blue-500">📍</span>
+            <h3 className="text-[#582BF3] text-xl font-semibold mb-6">Contact</h3>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              <li className="flex items-start gap-3">
+                <MdLocationOn className="text-[#582BF3] text-lg drop-shadow-[0_0_8px_rgba(88,43,243,0.9)]" />
                 <span>123 Main Street, Hyderabad, India</span>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-5 h-5 text-blue-500">📞</span>
+              <li className="flex items-center gap-3">
+                <MdPhone className="text-[#582BF3] text-lg drop-shadow-[0_0_8px_rgba(88,43,243,0.9)]" />
                 <span>+91 98765 43210</span>
               </li>
-              <li className="flex items-center gap-2">
-                <span className="w-5 h-5 text-blue-500">✉️</span>
+              <li className="flex items-center gap-3">
+                <MdEmail className="text-[#582BF3] text-lg drop-shadow-[0_0_8px_rgba(88,43,243,0.9)]" />
                 <span>info@hellobj.com</span>
               </li>
             </ul>
@@ -80,12 +85,18 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm">&copy; {currentYear} HelloBj. All rights reserved.</p>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="hover:text-white transition">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition">Terms of Service</a>
-            <a href="#" className="hover:text-white transition">Cookies</a>
+        <div className="border-t border-[#582BF3] mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
+          <p >&copy; {currentYear} HelloBj. All rights reserved.</p>
+          <div className="flex gap-8">
+            {["Privacy Policy", "Terms of Service", "Cookies"].map((item, i) => (
+              <a
+                key={i}
+                href="#"
+                className=" hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_5px_rgba(88,43,243,0.7)]"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>

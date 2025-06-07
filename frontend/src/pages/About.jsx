@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
-    <section className="min-h-screen bg-[#FAFAFA] py-20 px-6 text-gray-800 font-inter">
+    <section className="min-h-screen bg-black py-20 px-6 text-gray-800 font-inter">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -17,7 +17,7 @@ const About = () => {
         </div>
 
         {/* Mission and Image */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20 bg-white p-10 border border-gray-100">
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20 bg-black p-10 border border-gray-700">
           <img
             src="/logo.svg"
             alt="About HelloBj"

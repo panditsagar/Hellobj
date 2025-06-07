@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-const Counter = ({ end, inView, textClass = "text-white" }) => {
+const Counter = ({ end, inView }) => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
@@ -23,7 +23,7 @@ const Counter = ({ end, inView, textClass = "text-white" }) => {
         return () => clearInterval(interval);
     }, [inView, end]);
 
-    return <div className={`text-5xl font-bold ${textClass}`}>{count}+</div>;
+    return <div className="text-5xl font-extrabold text-[#582BF3]">{count}+</div>;
 };
 
 const Stats = () => {
@@ -39,22 +39,29 @@ const Stats = () => {
     return (
         <section
             ref={ref}
-            className="py-16 px-6 bg-gradient-to-br from-blue-200 via-white to-blue-300
-
-"
+            className="relative py-18 px-6 bg-black text-white overflow-hidden"
         >
-            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            {/* Crossed Diagonal Effects */}
+            <div
+                className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-[#582BF3] blur-3xl transform -rotate-45 animate-pulse"
+                style={{ opacity: 0.03 }}
+            />
+            <div
+                className="absolute -bottom-32 -right-32 w-[500px] h-[500px] bg-[#582BF3] blur-3xl transform rotate-45 animate-pulse"
+                style={{ opacity: 0.03 }}
+            />
+            <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                 {statsData.map((item, index) => (
                     <div key={index}>
-                        {/* Pass textClass to Counter to control text color */}
-                        <Counter end={item.value} inView={inView} textClass="text-blue-900" />
-                        <div className="text-blue-900 mt-2 text-sm md:text-base font-medium">
+                        <Counter end={item.value} inView={inView} />
+                        <div className="text-gray-300 mt-2 text-sm md:text-lg font-medium">
                             {item.label}
                         </div>
                     </div>
                 ))}
             </div>
         </section>
+
     );
 };
 
