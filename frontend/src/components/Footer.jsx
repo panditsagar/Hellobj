@@ -82,6 +82,24 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+        </div>
+        {/* Newsletter Subscription */}
+        <div className='flex items-center mt-10 gap-6 justify-end'>
+          <h3 className="text-gray-400 text-lg font-semibold ">Stay Updated :</h3>
+          <form className="flex flex-col sm:flex-row items-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="w-80 px-6 py-4 text-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none  "
+            />
+            <button
+              type="submit"
+              className="px-6 py-4 bg-[#4C25D3] cursor-pointer text-white text-md"
+            >
+              Subscribe
+            </button>
+          </form>
         </div>
 
         {/* Divider */}

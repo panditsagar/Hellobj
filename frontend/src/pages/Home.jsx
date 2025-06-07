@@ -123,28 +123,59 @@ const Home = () => {
             <Stats />
 
             {/* 💬 Testimonials */}
-            <section className="bg-black py-24 px-6 text-center">
-                <h2 className="text-5xl font-semibold text-[#582BF3] mb-14">What Our Clients Say</h2>
+            <section className="bg-black py-24 px-6 text-center"> {/* Your original section background and padding */}
+                <h2 className="text-5xl font-semibold text-[#582BF3] mb-14">What Our Clients Say</h2> {/* Your original title */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                    {[{ name: 'Alice Johnson', company: 'TechCorp Inc.', avatar: 'https://randomuser.me/api/portraits/women/44.jpg', feedback: 'HelloBj transformed our digital presence with a beautifully designed website that truly reflects our brand.' },
-                    { name: 'Mark Stevenson', company: 'InnovateX', avatar: 'https://randomuser.me/api/portraits/men/46.jpg', feedback: 'Their team delivered fast, professional results and the ongoing support has been exceptional.' },
-                    { name: 'Sophia Lee', company: 'BrightFuture Ltd.', avatar: 'https://randomuser.me/api/portraits/women/68.jpg', feedback: 'We were impressed by their expert knowledge and ability to bring our ideas to life seamlessly.' },
-                    { name: 'James Patel', company: 'Tech Innovations', avatar: 'https://randomuser.me/api/portraits/men/50.jpg', feedback: 'The project was handled with utmost professionalism and delivered ahead of schedule.' },
-                    { name: 'Emily Verma', company: 'NextGen Apps', avatar: 'https://randomuser.me/api/portraits/women/12.jpg', feedback: 'Working with HelloBj was a smooth and creative experience — they truly understood our vision.' },
-                    { name: 'Rahul Mehta', company: 'GlobalEdge Solutions', avatar: 'https://randomuser.me/api/portraits/men/32.jpg', feedback: 'Their commitment to quality and attention to detail is unmatched. Highly recommend HelloBj!' },
-                    ].map(({ name, company, avatar, feedback }, i) => (
+                    {[
+                        // Added rating to your existing data structure
+                        { name: 'Alice Johnson', company: 'TechCorp Inc.', avatar: 'https://randomuser.me/api/portraits/women/44.jpg', feedback: 'HelloBj transformed our digital presence with a beautifully designed website that truly reflects our brand!', rating: 5 },
+                        { name: 'Mark Stevenson', company: 'InnovateX', avatar: 'https://randomuser.me/api/portraits/men/46.jpg', feedback: 'Their team delivered fast, professional results and the ongoing support has been exceptional. ', rating: 4 },
+                        { name: 'Sophia Lee', company: 'BrightFuture Ltd.', avatar: 'https://randomuser.me/api/portraits/women/68.jpg', feedback: 'We were impressed by their expert knowledge and ability to bring our ideas to life seamlessly. ', rating: 5 },
+                        { name: 'James Patel', company: 'Tech Innovations', avatar: 'https://randomuser.me/api/portraits/men/50.jpg', feedback: 'The project was handled with utmost professionalism and delivered ahead of schedule. ', rating: 5 },
+                        { name: 'Emily Verma', company: 'NextGen Apps', avatar: 'https://randomuser.me/api/portraits/women/12.jpg', feedback: 'Working with HelloBj was a smooth and creative experience — they truly understood our vision. ', rating: 5 },
+                        { name: 'Rahul Mehta', company: 'GlobalEdge Solutions', avatar: 'https://randomuser.me/api/portraits/men/32.jpg', feedback: 'Their commitment to quality and attention to detail is unmatched. Highly recommend HelloBj! ', rating: 4 },
+                    ].map(({ name, company, avatar, feedback, rating }, i) => (
                         <div
                             key={i}
-                            className="  p-6 border border-gray-700 shadow hover:shadow-md transition flex flex-col items-center"
+                            // Maintaining your original card base styles, adding new structural elements
+                            className="p-8 border border-gray-700 shadow hover:shadow-md transition flex flex-col items-center relative overflow-hidden h-[270px] " // Added bg-gray-800 (example dark), rounded-lg, relative, overflow-hidden, h-full
                         >
-                            <img
-                                src={avatar}
-                                alt={`${name} avatar`}
-                                className="w-24 h-24 rounded-full mb-4 object-cover shadow-sm"
-                            />
-                            <p className="italic text-gray-300 mb-6">"{feedback}"</p>
-                            <p className="font-semibold text-white">{name}</p>
-                            {company && <p className="text-sm text-gray-400">{company}</p>}
+                            {/* Decorative Quote Icon - Styled to be subtle on your existing card color */}
+                            <div className="absolute  top-3 right-3 text-[5rem] font-bold text-white opacity-40 leading-none z-0"> {/* Adjusted size and opacity */}
+                                ”
+                            </div>
+
+                            {/* Star Rating - Positioned above feedback */}
+                            <div className="flex mb-4 z-10 self-start"> {/* self-start to align left like image */}
+                                {[...Array(rating || 0)].map((_, starIndex) => ( // Default rating to 0 if not provided
+                                    <svg key={starIndex} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20"> {/* Slightly smaller stars */}
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.09l6.572-.955L10 0l2.939 6.135 6.572.955-4.756 4.455 1.123 6.545z" />
+                                    </svg>
+                                ))}
+                                {[...Array(5 - (rating || 0))].map((_, starIndex) => (
+                                    <svg key={`empty-${starIndex}`} className="w-5 h-5 text-gray-600 fill-current" viewBox="0 0 20 20">
+                                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.09l6.572-.955L10 0l2.939 6.135 6.572.955-4.756 4.455 1.123 6.545z" />
+                                    </svg>
+                                ))}
+                            </div>
+
+                            {/* Feedback Text - Adjusted to be left-aligned and take available space */}
+                            <p className="italic text-gray-300 mb-6 text-left flex-grow z-10 text-m"> {/* text-left, flex-grow, text-sm */}
+                                "{feedback}"
+                            </p>
+
+                            {/* Author Info - Kept at the bottom, avatar and text layout adjusted */}
+                            <div className="flex items-center w-full mt-auto z-10"> {/* w-full, new border color */}
+                                <img
+                                    src={avatar}
+                                    alt={`${name} avatar`}
+                                    className="w-10 h-10 rounded-full mr-3 object-cover shadow-sm" // Smaller avatar, adjusted margin
+                                />
+                                <div className="text-left"> {/* Ensure text aligns left */}
+                                    <p className="font-semibold text-white text-s">{name}</p> {/* Adjusted font size */}
+                                    {company && <p className="text-sm text-gray-400">{company}</p>} {/* Adjusted font size */}
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
