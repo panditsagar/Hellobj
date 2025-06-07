@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Globe, Smartphone, Paintbrush, Headphones } from 'lucide-react';
-
+import ContactGloab from './ContactGlobe';
 import Stats from '../components/Stats';
 import {
     Zap, Users, TrendingUp, ShieldCheck, Handshake,
@@ -13,30 +13,12 @@ const Home = () => {
     return (
         <div className="font-inter text-white bg-black">
             {/* 🚀 Hero Section */}
-            <section className="relative bg-black py-48 px-6 text-center overflow-hidden">
-                <div className="absolute -top-20 -left-20 w-[400px] h-[500px] bg-blue-900 rounded-full opacity-10 blur-3xl animate-pulse" />
-                <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] bg-blue-800 rounded-full opacity-10 blur-2xl animate-pulse" />
-
-                <div className="relative z-10 max-w-5xl mx-auto">
-                    <h1 className="text-5xl md:text-6xl font-bold italic text-[#582BF3] mb-6 leading-tight">
-                        We Build Smart Digital Solutions
-                    </h1>
-                    <p className="text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                        Helping businesses thrive with technology, design & strategy.
-                    </p>
-                    <div className="flex justify-center gap-4 flex-wrap">
-                        <Link
-                            to="/contact"
-                            className="bg-[#582BF3] text-white px-8 py-3 rounded-full font-medium "
-                        >
-                            Let&apos;s Talk
-                        </Link>
-                    </div>
-                </div>
+            <section className="bg-black pt-6 px-6">
+                <ContactGloab />
             </section>
 
             {/* 🧠 About Section */}
-            <section className="py-20 px-6 font-inter bg-black">
+            <section className=" px-6 font-inter bg-black">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col lg:flex-row gap-16 items-center justify-center">
                         <div className="h-[450px]">

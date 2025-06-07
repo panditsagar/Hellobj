@@ -9,6 +9,7 @@ import {
   Database,
   SearchCheck,
 } from 'lucide-react';
+import SpotlightCard from '../components/SpotlightCard';
 
 const services = [
   {
@@ -93,19 +94,26 @@ const Services = () => {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {services.map((service, index) => (
-            <div
+            <SpotlightCard
               key={index}
-              className=" p-8 min-h-[320px] border border-gray-700 hover:shadow-md transition flex flex-col items-center justify-center"
+              className="text-center p-8 min-h-[320px]"
             >
-              <div>{service.icon}</div>
-              <h3 className="font-semibold text-2xl text-white mb-3">{service.title}</h3>
-              <p className="text-gray-300 text-lg">{service.description}</p>
-            </div>
+              <div className="flex justify-center items-center mb-6">
+                <div className="[&>svg]:w-12 [&>svg]:h-12 [&>svg]:text-blue-400">
+                  {service.icon}
+                </div>
+              </div>
+
+              <h3 className="font-semibold text-2xl text-white mb-3">
+                {service.title}
+              </h3>
+
+              <p className="text-gray-300 text-lg">
+                {service.description}
+              </p>
+            </SpotlightCard>
           ))}
         </div>
-
-
-
       </div>
     </section>
   );
