@@ -92,9 +92,9 @@ const About = () => {
         <SpotlightCard className="mb-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <img
-              src="/about.png"
+              src="/company.webp"
               alt="About HelloBj"
-              className="w-full max-w-xs mx-auto animate-pulse drop-shadow-xl"
+              className=" w-[750px] h-[100%] mx-auto animate-pulse drop-shadow-xl"
               onError={(e) => e.target.style.display = 'none'}
             />
             <div>
