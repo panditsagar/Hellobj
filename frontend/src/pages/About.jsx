@@ -55,28 +55,22 @@ const values = [
 
 const teamMembers = [
   {
-    name: 'Aarav Patel',
+    name: 'Sagar Kumar',
     role: 'CEO & Founder',
-    photo: '/about.png',
-    bio: 'Visionary leader with 10+ years in tech startups and product innovation.',
+    photo: '/sagar.webp',
+    bio: 'Visionary leader with 3+ years in tech startups and product innovation.',
   },
   {
     name: 'Maya Shah',
-    role: 'Lead Developer',
-    photo: '/about.png',
+    role: 'UI/UX Designer',
+    photo: '/gautam_photo.webp',
     bio: 'Expert in scalable web applications and agile development methodologies.',
   },
   {
-    name: 'Rohan Mehta',
-    role: 'UI/UX Designer',
-    photo: '/about.png',
+    name: 'Gautam Pandit',
+    role: 'Lead Developer',
+    photo: '/gautam.png',
     bio: 'Crafts beautiful and intuitive interfaces that delight users.',
-  },
-  {
-    name: 'Neha Gupta',
-    role: 'Product Manager',
-    photo: '/about.png',
-    bio: 'Ensures every project aligns perfectly with business goals and user needs.',
   },
 ];
 const About = () => {
@@ -144,31 +138,36 @@ const About = () => {
         </div>
 
         {/* Team Section */}
-         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-14 tracking-wide">
+        <div className="py-16 px-4 sm:px-8 md:px-16 bg-black">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-14 tracking-wide">
             Meet Our Team
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {teamMembers.map((member, idx) => (
-              <SpotlightCard key={idx} className="p-0"> {/* Override padding */}
-                <div className="relative z-20"> {/* Content wrapper */}
+              <div
+                key={idx}
+                className="bg-[#0f0f0f] border border-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-purple-800/30 transition-all duration-300"
+              >
+                <div className="aspect-w-1 aspect-h-1">
                   <img
                     src={member.photo}
                     alt={member.name}
-                    className="p-1 h-45 object-cover object-top"
                     loading="lazy"
-                    onError={(e) => e.target.style.display = 'none'}
+                    onError={(e) => (e.target.style.display = 'none')}
+                    className="w-full h-full object-cover object-top rounded-t-xl p-4"
                   />
-                  <div className="p-4 text-center">
-                    <h3 className="text-lg font-semibold text-white">{member.name}</h3>
-                    <p className="text-blue-400 font-medium mb-1">{member.role}</p>
-                    <p className="text-gray-400 text-sm">{member.bio}</p>
-                  </div>
                 </div>
-              </SpotlightCard>
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-semibold text-white">{member.name}</h3>
+                  <p className="text-[#582BF3] font-medium mb-2">{member.role}</p>
+                  <p className="text-gray-400 text-sm">{member.bio}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
+
 
         {/* CTA - NOW USING SPOTLIGHTCARD */}
         <SpotlightCard className="text-center max-w-2xl mx-auto">
