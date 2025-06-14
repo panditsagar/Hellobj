@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import { MdLocationOn, MdPhone, MdEmail } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,14 +18,14 @@ const Footer = () => {
             </p>
             <div className="flex space-x-6 text-[#582BF3]">
               {[FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn].map((Icon, i) => (
-                <a
+                <Link
                   key={i}
-                  href="#"
+                  to="#"
                   className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_6px_rgba(88,43,243,0.7)]"
                   aria-label="social icon"
                 >
                   <Icon size={20} />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -35,12 +36,12 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400 text-sm">
               {["Home", "About Us", "Services", "Portfolio", "Contact"].map((link, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_5px_rgba(88,43,243,0.7)]"
                   >
                     {link}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -52,12 +53,12 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-400 text-sm">
               {["Web Development", "Mobile Apps", "UI/UX Design", "Digital Marketing", "SEO Services"].map((service, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
+                  <Link
+                    to="#"
                     className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_5px_rgba(88,43,243,0.7)]"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -106,13 +107,13 @@ const Footer = () => {
           <p>&copy; {currentYear} Hellobj. All rights reserved.</p>
           <div className="flex flex-wrap gap-4 md:gap-8 justify-center md:justify-start">
             {["Privacy Policy", "Terms of Service", "Cookies"].map((item, i) => (
-              <a
+              <Link
                 key={i}
-                href="#"
+                to="#"
                 className="hover:text-[#8e6ff1] transition duration-300 drop-shadow-[0_0_5px_rgba(88,43,243,0.7)]"
               >
                 {item}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

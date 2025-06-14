@@ -51,7 +51,7 @@ const Home = () => {
             </section>
 
 
-            {/*  🛠 Services Section */ }
+            {/*  🛠 Services Section */}
             <section className="bg-black py-20 px-4 sm:px-6 text-center font-inter">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-4xl sm:text-5xl font-bold text-[#582BF3] mb-14">
@@ -189,10 +189,10 @@ const Home = () => {
                         ].map(({ name, company, avatar, feedback, rating }, i) => (
                             <SpotlightCard
                                 key={i}
-                                className="relative p-8 bg-[#0f0f0f] rounded-2xl border flex flex-col h-full text-left"
+                                className="relative bg-[#0f0f0f] rounded-2xl border flex flex-col h-full text-left"
                             >
                                 {/* Quote Icon */}
-                                <div className="absolute top-5 right-6 text-7xl text-white opacity-10 z-0">
+                                <div className="absolute  top-5 right-6 text-7xl text-white z-0">
                                     &rdquo;
                                 </div>
 

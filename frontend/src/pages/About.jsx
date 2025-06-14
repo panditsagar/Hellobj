@@ -58,19 +58,16 @@ const teamMembers = [
     name: 'Sagar Kumar',
     role: 'CEO & Founder',
     photo: '/sagar.webp',
-    bio: 'Visionary leader with 3+ years in tech startups and product innovation.',
   },
   {
-    name: 'Maya Shah',
-    role: 'UI/UX Designer',
-    photo: '/gautam_photo.webp',
-    bio: 'Expert in scalable web applications and agile development methodologies.',
+    name: 'Ravi Kumar',
+    role: 'Full Stack Developer',
+    photo: '/Ravi.jpg',
   },
   {
     name: 'Gautam Pandit',
     role: 'Lead Developer',
     photo: '/gautam.png',
-    bio: 'Crafts beautiful and intuitive interfaces that delight users.',
   },
 ];
 const About = () => {
@@ -84,44 +81,44 @@ const About = () => {
             About HelloBj
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
-            We build smart, scalable, and high-impact digital solutions tailored for startups and growing businesses. Our team is passionate about transforming ideas into reality through innovation, agility, and design excellence.
+            Founded in June 2025, Hellobj is a dynamic and forward-thinking technology company committed to transforming ideas into impactful digital solutions. With a strong foundation in innovative product development, we specialize in building scalable web applications, robust backend systems, and seamless mobile experiences.
           </p>
         </div>
 
         {/* Mission and Why Us */}
-        <SpotlightCard className="mb-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <img
-              src="/company.webp"
-              alt="About HelloBj"
-              className=" w-[750px] h-[100%] mx-auto animate-pulse drop-shadow-xl"
-              onError={(e) => e.target.style.display = 'none'}
-            />
-            <div>
-              <h2 className="text-2xl font-semibold text-white mb-6 border-l-4 border-blue-500 pl-4">
-                Our Mission
-              </h2>
-              <p className="text-gray-300 mb-8 text-base md:text-lg leading-relaxed">
-                At HelloBj, our mission is to empower businesses by crafting reliable and innovative digital products that fuel growth and efficiency. We focus on user-centric design and scalable architecture to build lasting digital experiences.
-              </p>
-              <h2 className="text-2xl font-semibold text-white mb-4 border-l-4 border-blue-500 pl-4">
-                Why We're Different
-              </h2>
-              <ul className="space-y-4 text-base md:text-lg text-gray-300">
-                {points.map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 hover:text-blue-400 transition-colors">
-                    {item.icon}
-                    <span>{item.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <img
+            src="/company.webp"
+            alt="About HelloBj"
+            className=" w-[750px] h-[100%] mx-auto   drop-shadow-xl"
+            onError={(e) => e.target.style.display = 'none'}
+          />
+          <div>
+            <h2 className="text-2xl font-semibold text-white mb-6 border-l-4 border-blue-500 pl-4">
+              Our Mission
+            </h2>
+            <p className="text-gray-300 mb-8 text-base md:text-lg leading-relaxed">
+              At HelloBj, our mission is to empower businesses by crafting reliable and innovative digital products that fuel growth and efficiency. We focus on user-centric design and scalable architecture to build lasting digital experiences.
+            </p>
+            <h2 className="text-2xl font-semibold text-white mb-4 border-l-4 border-blue-500 pl-4">
+              Why We're Different
+            </h2>
+            <ul className="space-y-4 text-base md:text-lg text-gray-300">
+              {points.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 hover:text-blue-400 transition-colors">
+                  {item.icon}
+                  <span>{item.text}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </SpotlightCard>
+        </div>
+
 
         {/* Vision & Values */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-14 tracking-wide">
+          <h2 className="text-4xl font-bold text-white text-center mb-14 tracking-wide">
             Our Vision & Values
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -139,15 +136,15 @@ const About = () => {
 
         {/* Team Section */}
         <div className="py-16 px-4 sm:px-8 md:px-16 bg-black">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-14 tracking-wide">
-            Meet Our Team
-          </h2>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white text-center mb-14 tracking-wide">
+            Meet our amazing team
+          </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {teamMembers.map((member, idx) => (
               <div
                 key={idx}
-                className="bg-[#0f0f0f] border border-gray-800 rounded-xl overflow-hidden shadow-xl hover:shadow-purple-800/30 transition-all duration-300"
+                className="bg-[#0f0f0f] overflow-hidden"
               >
                 <div className="aspect-w-1 aspect-h-1">
                   <img
@@ -159,9 +156,8 @@ const About = () => {
                   />
                 </div>
                 <div className="p-4 text-center">
-                  <h3 className="text-lg font-semibold text-white">{member.name}</h3>
+                  <h3 className="text-xl font-semibold text-white">{member.name}</h3>
                   <p className="text-[#582BF3] font-medium mb-2">{member.role}</p>
-                  <p className="text-gray-400 text-sm">{member.bio}</p>
                 </div>
               </div>
             ))}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
@@ -29,23 +30,23 @@ const Contact = () => {
             {/* Phone */}
             <div className="flex items-center gap-3">
               <Phone className="w-6 h-6 text-gray-300 flex-shrink-0" />
-              <a
-                href="tel:+918928571364"
+              <Link
+                to="tel:+918928571364"
                 className="text-[#582BF3] underline text-base hover:text-purple-400 transition"
               >
                 +91 8928571364
-              </a>
+              </Link>
             </div>
 
             {/* Email */}
             <div className="flex items-center gap-3">
               <Mail className="w-6 h-6 text-gray-300 flex-shrink-0" />
-              <a
-                href="mailto:hellobj0001@gmail.com"
+              <Link
+                to="mailto:hellobj0001@gmail.com"
                 className="text-[#582BF3] underline text-base hover:text-purple-400 transition"
               >
                 hellobj0001@gmail.com
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -53,18 +54,18 @@ const Contact = () => {
           <div className="mt-12">
             <h2 className="text-xl font-semibold text-gray-300 mb-4">Follow Us:</h2>
             <div className="flex space-x-6 text-gray-300 text-3xl">
-              <a href="#" aria-label="Facebook" className="hover:text-[#582BF3] transition">
+              <Link to="#" aria-label="Facebook" className="hover:text-[#582BF3] transition">
                 <FaFacebookF />
-              </a>
-              <a href="#" aria-label="Instagram" className="hover:text-[#582BF3] transition">
+              </Link>
+              <Link to="#" aria-label="Instagram" className="hover:text-[#582BF3] transition">
                 <FaInstagram />
-              </a>
-              <a href="#" aria-label="Twitter" className="hover:text-[#582BF3] transition">
+              </Link>
+              <Link to="#" aria-label="Twitter" className="hover:text-[#582BF3] transition">
                 <FaXTwitter />
-              </a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-[#582BF3] transition">
+              </Link>
+              <Link to="#" aria-label="LinkedIn" className="hover:text-[#582BF3] transition">
                 <FaLinkedinIn />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
